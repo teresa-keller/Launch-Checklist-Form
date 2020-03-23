@@ -24,14 +24,17 @@ let copilotName = this.document.querySelector("input[name = copilotName]");
 
    this.event.preventDefault();
    this.console.log("yep");
-
+// console.log(Number(cargoMass.value));
 
 launchForm.addEventListener("submit", function() {
-   
+   if(typeof pilotName.value !== "string") {
+      alert("Please enter a valid name.");
+   }   
+   // console.log(typeof pilotName.value);
    if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value ==="") {
-      alert("All fields required!");
-   
+      alert("All fields required!");   
    }
 
    });
 });
+
