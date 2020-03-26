@@ -52,24 +52,29 @@ launchForm.addEventListener("submit", function(event) {
    event.preventDefault();
 
    
+   if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value ==="") {
+      alert("All fields required!"); 
+      return;  
+   }
+   
    if(isNaN(pilotName.value) === false) {
       alert("Please enter a valid name.");
-      
+      return;
    }
 
    if(isNaN(copilotName.value) === false) {
       alert("Please enter a valid name.");
-      
+      return;
    }
    
    if(isNaN(fuelLevel.value)) {
       alert("Please enter a number.");
-      
+      return;
    }
 
    if(isNaN(cargoMass.value)) {
       alert("Please enter a number.");
-      
+      return;
    }
    
    if(fuelLevel.value < 10000) {
@@ -97,9 +102,7 @@ launchForm.addEventListener("submit", function(event) {
    launchStatus.style.color = "green";
    }
 
-   if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value ==="") {
-      alert("All fields required!");   
-   }
+   
    });
 });
 
