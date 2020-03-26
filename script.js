@@ -52,7 +52,15 @@ launchForm.addEventListener("submit", function() {
    event.preventDefault();
    // pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
    
-   if (isNaN(fuelLevel.value)) {
+   if(isNaN(pilotName.value) === false) {
+      alert("Please enter a valid name.");
+   }
+
+   if(isNaN(copilotName.value) === false) {
+      alert("Please enter a valid name.");
+   }
+   
+   if(isNaN(fuelLevel.value)) {
       alert("Please enter a number.");
    }
 
