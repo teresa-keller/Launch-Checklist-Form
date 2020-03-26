@@ -16,7 +16,9 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
       response.json().then(function(json) {
          const missionTarget = document.getElementById("missionTarget");
-         let planet = (json[0]);
+         // let planet = (json[0]);
+         let index = Math.floor(Math.random()*json.length);
+         let planet = (json[index]);
          missionTarget.innerHTML = `
          <h2>Mission Destination</h2>
             <ol>
