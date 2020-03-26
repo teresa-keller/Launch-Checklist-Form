@@ -16,7 +16,6 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
       response.json().then(function(json) {
          const missionTarget = document.getElementById("missionTarget");
-         // let planet = (json[0]);
          let index = Math.floor(Math.random()*json.length);
          let planet = (json[index]);
          missionTarget.innerHTML = `
@@ -47,27 +46,30 @@ let cargoStatus = this.document.getElementById("cargoStatus");
 let launchStatus = this.document.getElementById("launchStatus");
    
    
-   this.console.log("yep");
 
 
-launchForm.addEventListener("submit", function() {
+launchForm.addEventListener("submit", function(event) {
    event.preventDefault();
-   // pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
+
    
    if(isNaN(pilotName.value) === false) {
       alert("Please enter a valid name.");
+      
    }
 
    if(isNaN(copilotName.value) === false) {
       alert("Please enter a valid name.");
+      
    }
    
    if(isNaN(fuelLevel.value)) {
       alert("Please enter a number.");
+      
    }
 
    if(isNaN(cargoMass.value)) {
       alert("Please enter a number.");
+      
    }
    
    if(fuelLevel.value < 10000) {
@@ -77,6 +79,7 @@ launchForm.addEventListener("submit", function() {
       pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready.`;
       copilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready.`;
       fuelStatus.innerHTML = "Fuel level too low for launch.";
+      
    } 
    
    if(cargoMass.value > 10000) {
@@ -86,6 +89,7 @@ launchForm.addEventListener("submit", function() {
       pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready.`;
       copilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready.`;
       cargoStatus.innerHTML = "Cargo mass too high for launch.";
+      
    } 
    
    if(fuelLevel.value >= 10000 && cargoMass.value <= 10000) {
@@ -96,7 +100,6 @@ launchForm.addEventListener("submit", function() {
    if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value ==="") {
       alert("All fields required!");   
    }
-
    });
 });
 
