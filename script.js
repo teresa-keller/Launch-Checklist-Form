@@ -2,15 +2,16 @@
 
 window.addEventListener("load", function() {
    let launchForm = document.getElementById("launchForm");
-   launchForm.addEventListener("submit", function(event) {
-      let pilotName = document.querySelector("input[name = pilotName]");
-      let copilotName = document.getElementById("input[name = copilotName]");
-      let fuelLevel = document.getElementById("input[name = fuelLevel]");
-      let cargoMass = document.getElementById("input[name = cargoMass]");
+   let pilotName = document.querySelector("input[name = pilotName]");
+   let copilotName = document.querySelector("input[name = copilotName]");
+   let fuelLevel = document.querySelector("input[name = fuelLevel]");
+   let cargoMass = document.querySelector("input[name = cargoMass]");
    
+   
+   launchForm.addEventListener("submit", function(event) {
+      event.preventDefault();
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields required!");
-         event.preventDefault();
       }   
    });
 });
