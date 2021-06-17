@@ -3,10 +3,11 @@
 window.addEventListener("load", function() {
    let launchForm = document.getElementById("launchForm");
    launchForm.addEventListener("submit", function(event) {
-      let pilotName = document.getElementById("pilotName");
-      let copilotName = document.getElementById("copilotName");
-      let fuelLevel = document.getElementById("fuelLevel");
-      let cargoMass = document.getElementById("cargoMass");
+      let pilotName = document.querySelector("input[name = pilotName]");
+      let copilotName = document.getElementById("input[name = copilotName]");
+      let fuelLevel = document.getElementById("input[name = fuelLevel]");
+      let cargoMass = document.getElementById("input[name = cargoMass]");
+   
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields required!");
          event.preventDefault();
